@@ -9,6 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Iain Beeston"]
   spec.email         = ["iain.beeston@gmail.com"]
   spec.description   = %q{A reusable rake task to vendorise a gem hosted in a private git repo}
+  spec.summary       = %q{Uses git subtree to download the source for a gem into /vendor/gems}
   spec.homepage      = "http://github.com/New-Bamboo/vendorise"
   spec.license       = "MIT"
 
