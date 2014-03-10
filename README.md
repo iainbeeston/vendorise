@@ -4,9 +4,9 @@ Sometimes you need to use a gem in your app that is hosted in a private git repo
 
 * Install an SSH certificate on your server, but it's not always an option (for example, if you use [Heroku](http://heroku.com))
 * Use [Gemfury](http://gemfury.com), but that costs money and potentially creates privacy concerns
-* Hard-code an oauth token into your Gemfile (if the gem is hosted on [github](http://github.com)), but means anyone with access to the code of your app also has access to all of your github repositories
+* Hard-code an oauth token into your Gemfile (if the gem is hosted on [github](http://github.com)), but then anyone with access to the code also has access to all of your github repositories
 
-Vendorise offers a different way of accessing privately hosted gems, by using git's subtree command to download the gem on your development machine and commit it into the source tree of your repository, but still allowing the gem to be updated.
+Vendorise offers a different way of accessing privately hosted gems, by using git's subtree command to download the gem on your development machine and commit it into the source tree of your repository, but still allowing the gem to be updated. It's not ideal, but if you have to include the code for a gem in your own app then I'd recommend it.
 
 *Note:* vendorise relies on the git subtree command to work - only recent versions of git have this
 
