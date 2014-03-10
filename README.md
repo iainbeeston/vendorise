@@ -4,7 +4,7 @@ A reusable rake task to vendorise a gem hosted in a private git repo, using git 
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's Gemfile (if you're using Rails, only add it to the development group):
 
     gem 'vendorise'
 
