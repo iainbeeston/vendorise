@@ -18,7 +18,7 @@ By using subtree, updating the code is straightforward and your server does not 
 
 ## Installation
 
-If you're using bundler Add this line to your application's Gemfile (if you're using Rails, only add it to the development group):
+If you're using bundler add this line to your application's Gemfile (if you're using Rails, only add it to the development group):
 
     gem 'vendorise'
 
