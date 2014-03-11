@@ -29,7 +29,9 @@ Or install it yourself as:
 1. Run `rake vendorise:gem[repo_url]` to vendorise the gem hosted at `repo_url` into `/vendor/gems`.
 2. Add `gem '<gem_name>', path: 'vendor/gems/<gem_name>'` to your Gemfile
 
-You can update the gem at any time by running the rake task again
+You can update the gem at any time by running the rake task again.
+
+Vendorise always uses the code from the master branch on git (tags are not supported yet)
 
 ## Contributing
 
