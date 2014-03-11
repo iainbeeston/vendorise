@@ -8,6 +8,6 @@ namespace :vendorise do
     path = "vendor/gems/#{Vendorise::Parser.gem_name(args[:url])}"
     cmd = Dir.exist?(path) ? "pull" : "add"
 
-    puts `git subtree #{cmd} --prefix #{path} #{url} master --squash`
+    system("git subtree #{cmd} --prefix #{path} #{url} master --squash")
   end
 end
