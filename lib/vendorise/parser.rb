@@ -1,15 +1,17 @@
 module Vendorise
   class Parser
+    attr_reader :url
 
-    class << self
-      def gem_url(url)
-        url =~ /^\s+$/ ? nil : url
-      end
-
-      def gem_name(url)
-        File.basename url, ".git"
-      end
+    def initialize(url)
+      @url = url
     end
 
+    def gem_url
+      url =~ /^\s+$/ ? nil : url
+    end
+
+    def gem_name
+      File.basename url, ".git"
+    end
   end
 end
