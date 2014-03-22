@@ -1,7 +1,7 @@
 # Vendorise
 
 [![Gem Version](https://badge.fury.io/rb/vendorise.png)](http://badge.fury.io/rb/vendorise)
-[![Build Status](https://travis-ci.org/New-Bamboo/vendorise.png)](https://travis-ci.org/New-Bamboo/vendorise)
+[![Build Status](https://travis-ci.org/iainbeeston/vendorise.png)](https://travis-ci.org/iainbeeston/vendorise)
 
 Sometimes you need to use a gem that is only available in a private git repository. There are a few ways to do this:
 
