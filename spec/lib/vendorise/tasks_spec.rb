@@ -10,7 +10,7 @@ module Vendorise
     end
 
     it "accepts a url argument" do
-      expect(task.arg_names).to match_array [:url]
+      expect(task.arg_names).to match_array [:url, :branch]
     end
   end
 end

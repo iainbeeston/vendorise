@@ -3,21 +3,31 @@ require_relative "../../../lib/vendorise/arborist"
 
 module Vendorise
   describe Arborist do
-    describe :subtree_command do
-      subject { Arborist.new "foo/bar", "git@github.com:New-Bamboo/vendorise.git" }
+    let(:subtree_already_exists?) { false }
 
-      context "when #subtree_already_exists? is false" do
-        before { allow(subject).to receive(:subtree_already_exists?).and_return(false) }
+    before { allow(subject).to receive(:subtree_already_exists?).and_return(subtree_already_exists?) }
 
-        it "is git subtree add" do
+    context "when branch is specified in the constructor" do
+      subject { Arborist.new "foo/bar", "git@github.com:New-Bamboo/vendorise.git", "development" }
+
+      it "makes #subtree_command use that branch" do
+        expect(subject.subtree_command).to eq "git subtree add --prefix foo/bar git@github.com:New-Bamboo/vendorise.git development --squash"
+      end
+    end
+
+    describe :subtree_already_exists? do
+      subject { Arborist.new "foo/bar", "git@github.com:New-Bamboo/vendorise.git", "master" }
+
+      context "is false" do
+        it "makes #subtree_command use 'git subtree add'" do
           expect(subject.subtree_command).to eq "git subtree add --prefix foo/bar git@github.com:New-Bamboo/vendorise.git master --squash"
         end
       end
 
-      context "when #subtree_already_exists? is true" do
-        before { allow(subject).to receive(:subtree_already_exists?).and_return(true) }
+      context "is true" do
+        let(:subtree_already_exists?) { true }
 
-        it "is git subtree pull" do
+        it "makes #subtree_command use 'git subtree pull'" do
           expect(subject.subtree_command).to eq "git subtree pull --prefix foo/bar git@github.com:New-Bamboo/vendorise.git master --squash"
         end
       end
