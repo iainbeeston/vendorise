@@ -27,8 +27,12 @@ Or if you don't use bundler:
 
 ## Usage
 
-1. Run `rake vendorise:gem[repo_url]` to vendorise the gem hosted at `repo_url` into `/vendor/gems`.
+1. Run `rake "vendorise:gem[repo_url]"` to vendorise the gem hosted at `repo_url` into `/vendor/gems`.
 2. Add `gem '<gem_name>', path: 'vendor/gems/<gem_name>'` to your Gemfile
 
-You can update the gem at any time by running the rake task again. Vendorise always uses the code from the master branch on git (tags are not supported yet).
+You can update the gem at any time by running the rake task again.
+
+By default the `vendorise:gem` rake task will use the master branch. To use another branch (or tag) specify it as the second parameter, like this:
+
+    rake "vendorise:gem[repo_url, branch]"
 
