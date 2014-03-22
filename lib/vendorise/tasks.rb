@@ -10,6 +10,6 @@ namespace :vendorise do
 
     command = Vendorise::Arborist.new("vendor/gems/#{parser.gem_name}", url).subtree_command
 
-    Kernel.system(command)
+    sh(command)
   end
 end
