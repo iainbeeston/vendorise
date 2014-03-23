@@ -36,3 +36,6 @@ By default the `vendorise:gem` rake task will use the master branch. To use anot
 
     rake "vendorise:gem[repo_url, branch]"
 
+## Etymology
+
+Most Ruby developers would expect this gem to be called "vendorize", but the [author of this gem](http://github.com/iainbeeston) is British and in British English the ["-ise"](http://en.wiktionary.org/wiki/-ize) suffix is more commonly used than ["-ize"](http://en.wiktionary.org/wiki/-ise).
