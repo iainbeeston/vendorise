@@ -42,4 +42,5 @@ Most Ruby developers would expect this gem to be called "vendorize", but the [au
 
 ### Similar projects
 
-* [Piston](https://github.com/francois/piston)
+* Gemfury - https://gemfury.com
+* Piston - https://github.com/francois/piston
