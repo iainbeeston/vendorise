@@ -7,16 +7,12 @@ describe "vendorise" do
   end
 
   it "adds a rake task to run git subtree" do
-    expect(Rake::AltSystem).to receive(:system) do |cmd|
-      expect(cmd).to eq("git subtree add --prefix vendor/gems/sinatra git@github.com:sinatra/sinatra.git master --squash")
-    end
+    expect(Rake::AltSystem).to receive(:system).with("git subtree add --prefix vendor/gems/sinatra git@github.com:sinatra/sinatra.git master --squash").and_return(true)
     Rake.application.invoke_task "vendorise:gem[git@github.com:sinatra/sinatra.git]"
   end
 
   it "uses the (optional) second argument to select the branch" do
-    expect(Rake::AltSystem).to receive(:system) do |cmd|
-      expect(cmd).to eq("git subtree add --prefix vendor/gems/sinatra git@github.com:sinatra/sinatra.git 1.3.x --squash")
-    end
+    expect(Rake::AltSystem).to receive(:system).with("git subtree add --prefix vendor/gems/sinatra git@github.com:sinatra/sinatra.git 1.3.x --squash").and_return(true)
     Rake.application.invoke_task "vendorise:gem[git@github.com:sinatra/sinatra.git, 1.3.x]"
   end
 end
